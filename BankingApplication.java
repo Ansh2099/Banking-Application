@@ -15,8 +15,8 @@ public class BankingApplication{
 
 class BankAccountInfo{
 
-    int Balance = 0;
-    int previousTransaction;
+    double Balance = 0;
+    double previousTransaction;
     String customerID;
     String customerName;
   
@@ -27,7 +27,7 @@ class BankAccountInfo{
         this.customerName = customerName;
     }
 
-    void deposit(int amount){
+    void deposit(double amount){
         if(amount > 0){
             Balance += amount;
             previousTransaction = amount;
@@ -37,7 +37,7 @@ class BankAccountInfo{
         }
     }
 
-    void withdraw(int amount){
+    void withdraw(double amount){
         if(amount < Balance && amount > 0){
             Balance -= amount;
             previousTransaction = -amount;
@@ -115,12 +115,12 @@ class BankAccountInfo{
                 }
 
             case 'b' -> {
-                int amount = s.nextInt();
+                double amount = s.nextDouble();
                 deposit(amount);
                 }
 
             case 'c' -> {
-                int amountToWithdraw = s.nextInt();
+                double amountToWithdraw = s.nextDouble();
                 withdraw(amountToWithdraw);
                 }
 
