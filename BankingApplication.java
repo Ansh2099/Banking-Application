@@ -84,14 +84,16 @@ class BankAccountInfo{
 
     void showMenu(){
 
-        while(true){
-
         System.out.println(" ");
         System.out.println(" ");
         System.out.println("Welcome: " + customerName);
         System.out.println("Your Bank ID: " + customerID);
         System.out.println(" ");
         System.out.println("Here's your Daily Advice: " + dailyAdvice());
+        System.out.println(" ");
+
+        while(true){
+        
         System.out.println(" ");
         System.out.println("What would you like to do today: ");
         System.out.println(" ");
@@ -107,37 +109,29 @@ class BankAccountInfo{
 
         switch(input){
 
-            case 'a' : 
+            case 'a' -> { 
+                System.out.println(" ");
+                check();
+                }
 
-            System.out.println(" ");
-            check();
-            break;
+            case 'b' -> {
+                int amount = s.nextInt();
+                deposit(amount);
+                }
 
-            case 'b' :
+            case 'c' -> {
+                int amountToWithdraw = s.nextInt();
+                withdraw(amountToWithdraw);
+                }
 
-            int amount = s.nextInt();
-             deposit(amount);
-             break;
+            case 'd' -> checkPreviousTransaction();
 
-            case 'c' : 
+            case 'e' -> { 
+                System.out.println("Thank you for using our services!");
+                return;
+                }
 
-            int amountToWithdraw = s.nextInt();
-            withdraw(amountToWithdraw);
-            break;
-
-            case 'd' : 
-            
-            checkPreviousTransaction();
-            break;
-
-            case 'e' :
-
-            System.out.println("Thank you for using our services!");
-            return;
-
-            default: 
-            System.out.println("Invalid Command");
-            break;
+            default -> System.out.println("Invalid Command");
         }
        }
     }
