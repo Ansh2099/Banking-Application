@@ -85,7 +85,6 @@ class BankAccountInfo{
     void showMenu(){
 
         System.out.println(" ");
-        System.out.println(" ");
         System.out.println("Welcome: " + customerName);
         System.out.println("Your Bank ID: " + customerID);
         System.out.println(" ");
