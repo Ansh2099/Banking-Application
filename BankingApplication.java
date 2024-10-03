@@ -84,16 +84,19 @@ class BankAccountInfo{
 
     void showMenu(){
 
-        System.out.println(" ");
+        System.out.println("**************************************************************");
+        System.out.println("");
         System.out.println("Welcome: " + customerName);
         System.out.println("Your Bank ID: " + customerID);
         System.out.println(" ");
+        System.out.println("**************************************************************");
         System.out.println("Here's your Daily Advice: " + dailyAdvice());
         System.out.println(" ");
 
         while(true){
         
         System.out.println(" ");
+        System.out.println("**************************************************************");
         System.out.println("What would you like to do today: ");
         System.out.println(" ");
         System.out.println("A. Check Bank Balance");
@@ -130,7 +133,7 @@ class BankAccountInfo{
                 return;
                 }
 
-            default -> System.out.println("Invalid Command");
+            default -> System.out.println("Invalid Command. Input (A,B,C,D or E)");
         }
        }
     }
